@@ -9,7 +9,7 @@ function extractRates(obj) {
 
 	const rates = currencies.map( c => { 
 		const { symbol, rate_float: rate } = obj.bpi[c]
-		return Object.assign({}, {currencyName: c}, {symbol, rate})
+		return Object.assign({}, {currencyName: c}, {rate})
 	})
 
 	return rates
