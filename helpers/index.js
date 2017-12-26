@@ -1,3 +1,4 @@
+import request from 'request'
 const emojis = require('./currency-emojis.json')
 
 const currencyToEmoji = (currencyName) => emojis.find( e => e.currencyName === currencyName)
@@ -71,4 +72,20 @@ export function slackifyMsg(okOperation, payload) {
 	return msg
 }
 
+export function makeHttpRequest(url, cb) {
 
+	request(url, (error, response, body) => {
+		if(error || response.statusCode !== 200) {
+			const errorObject = { ok: false, payload: {
+								msgDev: `[${new Date()}] Could not connect to ${url}`,
+								msg: 'It was impossible to fetch bitcoin price'
+							}
+			}
+
+			return cb(errorObject)
+		}
+
+		cb(undefined, body)
+
+	})
+}
