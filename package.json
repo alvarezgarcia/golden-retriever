@@ -4,6 +4,7 @@
   "description": "Slack app to retrieve the bitcoin price",
   "main": "index.js",
   "scripts": {
+    "ngrok": "ngrok http 9000",
     "dev": "node_modules/.bin/babel-node srv/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,6 +16,7 @@
     "dotenv": "^4.0.0",
     "express": "^4.16.2",
     "ngrok": "^2.2.24",
+    "request": "^2.83.0",
     "supervisor": "^0.12.0"
   }
 }
