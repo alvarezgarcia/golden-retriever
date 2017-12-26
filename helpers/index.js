@@ -22,6 +22,7 @@ function extractTime(obj) {
 }
 
 export function extractBody(response) {
+
 	const time = extractTime(response)
 	const rates = extractRates(response)
 
@@ -33,7 +34,6 @@ export function extractBody(response) {
 }
 
 export function slackifyMsg(payload) {
-
 
 	const timeString = `*Last update:* ${payload.time}`
 	const ratesStrings = payload.rates.reduce( (acc, rate) => {
