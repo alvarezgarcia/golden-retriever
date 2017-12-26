@@ -1,15 +1,18 @@
 [
 	{
 		"currencyName": "USD",
-		"emoji": ":flag-us:"
+		"emojiFlag": ":flag-us:",
+		"emojiSymbol": ":dollar:"
 	},
 	{
 		"currencyName": "GBP",
-		"emoji": ":flag-gb:"
+		"emojiFlag": ":flag-gb:",
+		"emojiSymbol": ":pound:"
 	},
 	{
 		"currencyName": "EUR",
-		"emoji": ":flag-eu:"
+		"emojiFlag": ":flag-eu:",
+		"emojiSymbol": ":euro:"
 	}
 
 ]

@@ -8,7 +8,7 @@ function extractRates(obj) {
 	const currencies = Object.keys(obj.bpi)
 
 	const rates = currencies.map( c => { 
-		const { symbol, rate_float: rate } = obj.bpi[c]
+		const { rate } = obj.bpi[c]
 		return Object.assign({}, {currencyName: c}, {rate})
 	})
 
@@ -38,7 +38,7 @@ export function slackifyMsg(payload) {
 	const timeString = `*Last update:* ${payload.time}`
 	const ratesStrings = payload.rates.reduce( (acc, rate) => {
 		const emojiInfo = currencyToEmoji(rate.currencyName)
-		const str = `${emojiInfo.emoji}\n*Currency:* ${rate.currencyName}\n*Rate:* ${rate.rate}\n\n`
+		const str = `${emojiInfo.emojiFlag} - ${rate.currencyName}\n*Rate:* ${emojiInfo.emojiSymbol} ${rate.rate}\n\n`
 
 		return acc.concat(str)
 	}, []).join('')
