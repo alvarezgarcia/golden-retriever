@@ -89,3 +89,14 @@ export function makeHttpRequest(url, cb) {
 
 	})
 }
+
+export function makeValidationRequest(url, qs, cb) {
+
+	request({url, qs}, (error, response, body) => {
+		if (error || response.statusCode !== 200) return cb({ok: false, msg: error})
+
+		cb(undefined, {ok: true, msg: 'golden-retriever was successfully added to your workspace!'})
+	})
+
+
+}
