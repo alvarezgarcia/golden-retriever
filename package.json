@@ -6,19 +6,22 @@
   "scripts": {
     "ngrok": "ngrok http 9000",
     "dev": "node_modules/.bin/babel-node srv/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node_modules/.bin/mocha test/index.test.js --compilers js:babel-core/register"
   },
   "author": "raichuk",
   "license": "MIT",
   "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
-    "chai": "^4.1.2",
     "dotenv": "^4.0.0",
     "express": "^4.16.2",
     "ngrok": "^2.2.24",
-    "nock": "^9.1.5",
     "request": "^2.83.0",
     "supervisor": "^0.12.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1",
+    "nock": "^9.1.5"
   }
 }
