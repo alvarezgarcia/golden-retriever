@@ -36,4 +36,4 @@ class SimpleCache extends Cache {
 
 }
 
-export default SimpleCache
+export { SimpleCache }

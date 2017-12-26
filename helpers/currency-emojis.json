@@ -1,0 +1,15 @@
+[
+	{
+		"currencyName": "USD",
+		"emoji": ":flag-us:"
+	},
+	{
+		"currencyName": "GBP",
+		"emoji": ":flag-gb:"
+	},
+	{
+		"currencyName": "EUR",
+		"emoji": ":flag-eu:"
+	}
+
+]
