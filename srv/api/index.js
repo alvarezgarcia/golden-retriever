@@ -17,7 +17,6 @@ export default (cache) => {
 		const lastCacheTimestamp = cache.getLastTimestamp()
 		const currentTimestamp = now()
 
-
 		if(lastCacheTimestamp && (currentTimestamp - lastCacheTimestamp) <= EXPIRY_TIME) {
 			return res.json(cache.get())
 		}
@@ -39,9 +38,11 @@ export default (cache) => {
 			const extracted = extractBody(JSON.parse(body))
 			const msg = slackifyMsg(extracted.ok, extracted.payload)
 
-			if(!extracted.ok) console.error(extracted.payload.msgDev)
+			const jsonResponse = extracted.ok?
+														( cache.set(msg) ): //Set msg on cache and returns it
+														( console.error(extracted.payload.msgDev), msg ) //Alert developer and set msg
 
-			res.json(cache.set(msg))
+			res.json(jsonResponse)
 		})
 
 	})
