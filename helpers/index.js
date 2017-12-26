@@ -21,22 +21,20 @@ function extractTime(obj) {
 	return obj.time.updated
 }
 
-export function extractBody(response) {
+function slackifyMsgErr(data) {
 
-	const time = extractTime(response)
-	const rates = extractRates(response)
+	const slackMsg = {
+		text: `:x:*${data}*:x:`,
+    mrkdwn: true
+	}
 
-	if(!time || !rates) return {ok: false, msg: 'Could not build response properly, maybe coindesk api changed' }
-
-	const ret = Object.assign({}, {ok: true}, {msg: 'Information was succesfully fetched'}, { payload: {time, rates} })
-
-	return ret
+	return slackMsg
 }
 
-export function slackifyMsg(payload) {
+function slackifyMsgOk(data) {
 
-	const timeString = `*Last update:* ${payload.time}`
-	const ratesStrings = payload.rates.reduce( (acc, rate) => {
+	const timeString = `*Last update:* ${data.time}`
+	const ratesStrings = data.rates.reduce( (acc, rate) => {
 		const emojiInfo = currencyToEmoji(rate.currencyName)
 		const str = `${emojiInfo.emojiFlag} - ${rate.currencyName}\n*Rate:* ${emojiInfo.emojiSymbol} ${rate.rate}\n\n`
 
@@ -50,3 +48,27 @@ export function slackifyMsg(payload) {
 
 	return slackMsg
 }
+
+export function extractBody(response) {
+
+	const time = extractTime(response)
+	const rates = extractRates(response)
+
+	if(!time || !rates) 
+		return {ok: false, payload: { 
+				msgDev: `[${new Date()}] Could not build response properly, maybe coindesk api changed`,
+				msg: 'It was impossible to fetch bitcoin price'
+			}
+		}
+
+	const ret = Object.assign({}, {ok: true}, { payload: {data: {time, rates} } })
+
+	return ret
+}
+
+export function slackifyMsg(okOperation, payload) {
+	const msg = okOperation? slackifyMsgOk(payload.data): slackifyMsgErr(payload.msg)
+	return msg
+}
+
+

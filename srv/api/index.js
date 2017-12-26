@@ -23,10 +23,23 @@ export default (cache) => {
 		}
 
 		request(COINDESK_ENDPOINT, (error, response, body) => {
-			const extracted = extractBody(JSON.parse(body))
-			if(!extracted.ok) return res.json(extracted)
+			if(error || response.statusCode !== 200) {
+	
+				//Simulates an object returned by extractBody
+				const errorObject = {ok: false, payload: { 
+							msgDev: `[${new Date()}] Could not connect to ${COINDESK_ENDPOINT}`,
+							msg: 'It was impossible to fetch bitcoin price'
+						}
+				}
 
-			const msg = slackifyMsg(extracted.payload)
+				console.error(errorObject.payload.msgDev)
+				return res.json(slackifyMsg(errorObject.ok, errorObject.payload))
+			}
+
+			const extracted = extractBody(JSON.parse(body))
+			const msg = slackifyMsg(extracted.ok, extracted.payload)
+
+			if(!extracted.ok) console.error(extracted.payload.msgDev)
 
 			res.json(cache.set(msg))
 		})
