@@ -4,8 +4,6 @@ import { makeHttpRequest, extractBody, slackifyMsg } from '../../helpers'
 
 const now = () => Math.round(new Date() / 1000)
 
-
-
 const COINDESK_ENDPOINT = 'https://api.coindesk.com/v1/bpi/currentprice.json'
 const EXPIRY_TIME = 10
 
