@@ -24,9 +24,9 @@ export default (cache) => {
 
 		request(COINDESK_ENDPOINT, (error, response, body) => {
 			if(error || response.statusCode !== 200) {
-	
+
 				//Simulates an object returned by extractBody
-				const errorObject = {ok: false, payload: { 
+				const errorObject = {ok: false, payload: {
 							msgDev: `[${new Date()}] Could not connect to ${COINDESK_ENDPOINT}`,
 							msg: 'It was impossible to fetch bitcoin price'
 						}
