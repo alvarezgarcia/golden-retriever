@@ -6,7 +6,7 @@
 
 golden-retriever is an app for Slack which aims to inform the price in bitcoin 
 in dollars (as well as in pounds and euros).
-Simply invoking the slash command / btc will allow access to this information
+Simply invoking the slash command `/btc` will allow access to this information
 
 Because the results for currency conversions are acquired through a request to 
 the CoinDesk endpoint API, a very simple cache was implemented.
