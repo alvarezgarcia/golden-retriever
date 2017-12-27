@@ -45,4 +45,36 @@ and both variables should be filled with the values supplied by Slack at the mom
 
 In case the `.env` file does not exist or these two variables are not defined the application will not start.
 
+### Local Development
+
+```
+npm run dev
+```
+This will start the app on port 9000
+
+### Production
+
+```
+npm run prod
+```
+This command will transpile the complete project, execute it with supervisor and deattach it from terminal, this 
+will allow that if the process for some reason it crashs, it will be automatically restarted.
+
+### ngrok
+
+Among the installed dependencies is `ngrok`, which allows to expose the local server of the application 
+to the internet and thus use it as an endpoint for the slash command and access through OAuth.
+To start `ngrok` and make the tunnel to the local server on 9000 port, just execute the command:
+
+```
+npm run ngrok
+```
+
+![ngrok](https://i.imgur.com/pd1feoS.jpg)
+
+
 ## Testing
+
+```
+npm test
+```
