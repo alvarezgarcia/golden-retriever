@@ -29,4 +29,20 @@ https://wt-2d0c1b127ddf2114db57608a0d9ef965-0.run.webtask.io/golden-retriever/oa
 
 ## Setup
 
+### Dependencies
+
+```
+npm i
+```
+
+### Environment variables
+
+There is an example `.env` file, called `.env.sample` that has two required fields 
+`SLACK_CLIENT_ID` and `SLACK_CLIENT_SECRET`.
+
+The procedure for the app to work should be a copy of this file with the name .env 
+and both variables should be filled with the values supplied by Slack at the moment of app creation.
+
+In case the `.env` file does not exist or these two variables are not defined the application will not start.
+
 ## Testing
