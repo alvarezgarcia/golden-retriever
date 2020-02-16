@@ -1,6 +1,8 @@
 'use strict';
 
 const errorHandler = (err, req, res, next) => {
+  console.log(err);
+
   const error = {
     code: err.code,
     message: err.message
