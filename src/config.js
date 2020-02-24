@@ -1,4 +1,3 @@
-'use strict';
 
 const {
   PORT,
@@ -7,7 +6,7 @@ const {
   SLACK_CLIENT_SECRET,
   REDIS_URL,
   REDIS_TOPIC,
-  BITCOIN_PRICE_API_URL
+  BITCOIN_PRICE_API_URL,
 } = process.env;
 
 module.exports = {
@@ -17,5 +16,5 @@ module.exports = {
   slackClientSecret: SLACK_CLIENT_SECRET,
   redisUrl: REDIS_URL,
   redisTopic: REDIS_TOPIC,
-  bitcoinPriceApiUrl: BITCOIN_PRICE_API_URL
+  bitcoinPriceApiUrl: BITCOIN_PRICE_API_URL,
 };

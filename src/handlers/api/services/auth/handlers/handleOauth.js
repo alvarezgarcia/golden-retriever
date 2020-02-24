@@ -1,4 +1,3 @@
-'use strict';
 
 const { authorize } = require('../../../../../lib/slack');
 

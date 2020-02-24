@@ -1,4 +1,3 @@
-'use strict';
 
 const _ = require('lodash');
 
@@ -15,7 +14,7 @@ const prepareMessage = (raw) => {
   const lastUpdate = _.get(raw, 'time.updated');
 
   const fields = ['code', 'rate', 'description'];
-  const rates = Object.values(bpi).map(v => {
+  const rates = Object.values(bpi).map((v) => {
     const rate = extractRate(v, fields);
     const emoji = emojis[rate.code];
 
@@ -26,7 +25,7 @@ const prepareMessage = (raw) => {
 
   const formatted = {
     text,
-    mrkdwn: true
+    mrkdwn: true,
   };
 
   return formatted;

@@ -1,15 +1,14 @@
-'use strict';
 
 const emojis = {
   USD: {
-    symbol: ':dollar:'
+    symbol: ':dollar:',
   },
   GBP: {
-    symbol: ':pound:'
+    symbol: ':pound:',
   },
   EUR: {
-    symbol: ':euro:'
-  }
+    symbol: ':euro:',
+  },
 };
 
 module.exports = emojis;
