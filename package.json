@@ -5,7 +5,8 @@
   "scripts": {
     "api": "nodemon -r dotenv/config src/handlers/api/index.js",
     "handler": "node -r dotenv/config src/handlers/bitcoin-requester/index.js",
-    "bash:docker": "docker-compose run --rm app /bin/bash"
+    "bash:docker": "docker-compose run --rm app /bin/bash",
+    "eslint:fix": "eslint --fix ."
   },
   "author": "raichuk",
   "license": "MIT",

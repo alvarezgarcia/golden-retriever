@@ -4,3 +4,5 @@ parserOptions:
   ecmaVersion: 2018
 rules:
   max-len: ["error", { code: 120 }]
+  no-console: 0
+  
