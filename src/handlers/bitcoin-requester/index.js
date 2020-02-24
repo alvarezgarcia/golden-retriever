@@ -20,7 +20,8 @@ subscriber.on('message', async (channel, message) => {
 
     const bitcoinPriceResponse = await fetchPrice();
     const slackMessage = prepareMessage(JSON.parse(bitcoinPriceResponse));
-    const response = await sendMessage(slackMessage, responseUrl);
+
+    await sendMessage(slackMessage, responseUrl);
   } catch (error) {
     console.log(error);
   }
