@@ -32,7 +32,8 @@ https://wt-2d0c1b127ddf2114db57608a0d9ef965-0.run.webtask.io/golden-retriever/oa
 ### Dependencies
 
 ```
-npm i
+$ npm i
+$ docker-compose up
 ```
 
 ### Environment variables
