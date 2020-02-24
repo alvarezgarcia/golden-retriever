@@ -2,7 +2,8 @@ extends: 'airbnb-base'
 
 parserOptions:
   ecmaVersion: 2018
+  sourceType: "script"
 rules:
   max-len: ["error", { code: 120 }]
+  strict: ["error", "global"]  
   no-console: 0
-  
