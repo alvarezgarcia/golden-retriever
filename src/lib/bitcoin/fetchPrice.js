@@ -1,3 +1,4 @@
+'use strict';
 
 const request = require('superagent');
 const { bitcoinPriceApiUrl } = require('../../config');

@@ -1,3 +1,4 @@
+'use strict';
 
 const errorHandler = (err, req, res) => {
   console.log(err);

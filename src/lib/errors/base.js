@@ -1,3 +1,4 @@
+'use strict';
 
 class BaseError extends Error {
   constructor(message = 'Internal Server Error') {
