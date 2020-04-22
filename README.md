@@ -1,6 +1,6 @@
 # golden-retriever
 
-![demo](https://p53.f0.n0.cdn.getcloudapp.com/items/JrubWzqe/Screen%20Recording%202020-04-21%20at%2009.00%20PM.gif)
+![demo](https://imgur.com/a/YWfUAHm)
 
 ## Description
 
