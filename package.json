@@ -11,7 +11,7 @@
   "author": "raichuk",
   "license": "MIT",
   "dependencies": {
-    "aws-sdk": "^2.624.0",
+    "aws-sdk": "^2.814.0",
     "body-parser": "^1.19.0",
     "chai-http": "^4.3.0",
     "dotenv": "^4.0.0",
